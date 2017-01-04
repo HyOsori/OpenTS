@@ -7,7 +7,7 @@ symbol_list = [
     'GOOGL.SW',
     '005930.KS'
 ]
-
+'''
 for symbol in symbol_list:
     item = Share(symbol)
 
@@ -18,10 +18,33 @@ for symbol in symbol_list:
     print('high(yr) : ' + item.get_year_high())
     print('low(yr) : ' + item.get_year_low())
     print('')
-
-with open('file.csv', 'w') as file:
+'''
+with open('file.csv', 'w', newline='') as file:
     writer = csv.writer(file)
+
+    writer.writerow([
+        'date',
+        'name',
+        'currency',
+        'open',
+        'close',
+        'high',
+        'low',
+        'volume'
+    ])
 
     for symbol in symbol_list:
         item = Share(symbol)
-        writer.writerow([item.get_name(),item.get_currency(),item.get_open(),item.get_price(),item.get_year_high(),item.get_year_low()])
+        historical = item.get_historical('2016-01-01', '2016-02-01')
+
+        for data in historical:
+            writer.writerow([
+                data['Date'],
+                item.get_name(),
+                item.get_currency(),
+                data['Open'],
+                data['Close'],
+                data['High'],
+                data['Low'],
+                data['Volume']
+            ])
