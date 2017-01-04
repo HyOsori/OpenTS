@@ -1,4 +1,5 @@
 from yahoo_finance import Share
+import csv
 
 symbol_list = [
     'YHOO',
@@ -17,3 +18,10 @@ for symbol in symbol_list:
     print('high(yr) : ' + item.get_year_high())
     print('low(yr) : ' + item.get_year_low())
     print('')
+
+with open('file.csv', 'w') as file:
+    writer = csv.writer(file)
+
+    for symbol in symbol_list:
+        item = Share(symbol)
+        writer.writerow([item.get_name(),item.get_currency(),item.get_open(),item.get_price(),item.get_year_high(),item.get_year_low()])
