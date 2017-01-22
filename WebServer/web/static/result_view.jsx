@@ -2,7 +2,7 @@
  * Created by hch on 2017. 1. 22..
  */
 
-class View_Search extends React.Component
+class View_Result extends React.Component
 {
     constructor(props)
     {
@@ -12,13 +12,11 @@ class View_Search extends React.Component
     render()
     {
         return (
-            <div className="search_background">
-                <input className="search_bar">
-                    
-                </input>
+            <div className="result_background">
+                <p>SAMSUNG</p>
             </div>
         )
     }
 }
 
-ReactDOM.render(<View_Search/>, document.getElementById('content'));
+ReactDOM.render(<View_Result/>, document.getElementById('content'));

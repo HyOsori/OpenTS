@@ -1,20 +1,20 @@
-.search_background
+.result_background
 {
     margin-left: 10%;
     margin-top: 10%;
     width: 80%;
     height: 200px;
-    background: #92caca;
+    background: #3C4547;
 }
 
-.search_bar
+.result_bar
 {
     margin-left: 10%;
     margin-top: 5%;
     width: 80%;
     height: 60%;
     background: #ffffff;
-    color: #34aaa4;
+    color: #7BAE7F;
     font-size: 30px;
     outline:none;
 }
