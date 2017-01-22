@@ -1,9 +1,9 @@
 .result_background
 {
-    margin-left: 10%;
-    margin-top: 10%;
-    width: 80%;
-    height: 200px;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 90%;
+    height: 90%;
     background: #3C4547;
 }
 
@@ -12,9 +12,25 @@
     margin-left: 10%;
     margin-top: 5%;
     width: 80%;
-    height: 60%;
-    background: #ffffff;
-    color: #7BAE7F;
-    font-size: 30px;
+    color: #ffffff;
+    font-size: 50px;
     outline:none;
+}
+
+.result_stock
+{
+    margin-left:5%;
+    height: 50px;
+    width: 150px;
+    background:#ffffff;
+    color: crimson;
+    font-size: 20px;
+}
+.result_detail
+{
+    margin-left: 5%;
+    height: 60%;
+    width: 100%;
+    background: #ffffff;
+    font-size:  10px;
 }

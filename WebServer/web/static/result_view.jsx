@@ -13,7 +13,9 @@ class View_Result extends React.Component
     {
         return (
             <div className="result_background">
-                <p>SAMSUNG</p>
+                <p className="result_bar">SAMSUNG</p>
+                <p className="result_stock">^1800000</p>
+                <a className="result_detail">6시간 전(2016/01/18 - 13:48:27) 갱신된 자료입니다.</a>
             </div>
         )
     }
