@@ -14,8 +14,12 @@ class View_Search extends React.Component
         return (
             <div className="search_background">
                 <input className="search_bar">
-                    
+
                 </input>
+
+                <div className="search_btn">
+
+                </div>
             </div>
         )
     }

@@ -1,20 +1,43 @@
+body
+{
+    background: #7BAE7F;
+    font-family: 'Spoqa Han Sans', 'Sans-serif';
+}
+
+#content
+{
+    width: 100%;
+    height: 500px;
+    margin-top: 22%;
+    margin-left: 20%;
+}
+
 .search_background
 {
-    margin-left: 10%;
-    margin-top: 10%;
-    width: 80%;
-    height: 200px;
-    background: #92caca;
+    width: 60%;
+    height: 20%;
+    background: #ffffff;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.15);
 }
 
 .search_bar
 {
-    margin-left: 10%;
-    margin-top: 5%;
     width: 80%;
-    height: 60%;
+    height: 90%;
+    padding-left: 10px;
     background: #ffffff;
-    color: #34aaa4;
+    color: #3C4547;
     font-size: 30px;
+    border: none;
     outline:none;
+    font-weight: bold;
+}
+
+.search_btn
+{
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    float: right;
+    background: #73956F;
 }
