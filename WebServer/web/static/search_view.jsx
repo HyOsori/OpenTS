@@ -12,7 +12,21 @@ class View_Search extends React.Component
     render()
     {
         return (
-            <div className="search_background">
+
+            <div className = "search_back">
+
+                <input className = "search_input">
+                </input>
+
+                <form action = "/web/result">
+                  <button type="submit" className = "search_btn">
+                    <span> ☌ </span>
+                  </button>
+                </form>
+
+            </div>
+
+            /*<div className="search_background">
                 <input className="search_bar">
 
                 </input>
@@ -20,9 +34,9 @@ class View_Search extends React.Component
                 <div className="search_btn">
 
                 </div>
-            </div>
+            </div>*/
         )
     }
 }
 
-ReactDOM.render(<View_Search/>, document.getElementById('content'));
+ReactDOM.render(<View_Search/>, document.getElementById('contents'));

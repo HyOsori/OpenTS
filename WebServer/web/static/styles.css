@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%; }
+
+body {
+  display: flex;
+  align-items: center;
+  font-family: 'Spoqa Han Sans', 'serif';
+  justify-content: center;
+  background-color: #1d212b; }
+
+#contents
+{
+    width: 100%;
+    height: 350px;
+    margin-top: 20%;
+    margin-left: 25%;
+}
+
+h1
+{
+    position: absolute;
+    left: 39%;
+    top: 20%;
+    color: #ffffff;
+    font-size: 80px;
+    font-weight: 100;
+    animation: textColor 10s ease infinite;
+}
+
+.search_input
+{
+    float: left;
+    margin-top: 3px;
+    margin-left: 20px;
+    width: 80%;
+    height: 90%;
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    outline:none;
+    font-weight: 300;
+    animation: textColor 10s ease infinite;
+}
+
+.search_btn
+{
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    float: right;
+    border: none;
+    outline:none;
+    background-color: transparent;
+}
+
+.search_btn span{
+    font-size: 55px;
+    animation: textColor 10s ease infinite;
+    font-weight: 100;
+    display: inline-block;
+    -webkit-transform: rotateX(180deg);
+}
+
+.search_back {
+  position: relative;
+  width: 65%;
+  height: 20%;
+  line-height: 30vw;
+  text-align: center;
+  color: #252B37;
+  background-color: #151823;
+  animation: textColor 10s ease infinite;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.search_back:after {
+    position: absolute;
+    content: "";
+    top: 5vw;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.75);
+    -webkit-filter: blur(8vw);
+    -moz-filter: blur(8vw);
+    -ms-filter: blur(8vw);
+    filter: blur(8vw);
+    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite; }
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes textColor {
+  0% {
+    color: #7e0fff; }
+  50% {
+    color: #0fffc1; }
+  100% {
+    color: #7e0fff; } }
+
+
+/*# sourceMappingURL=styles.css.map */

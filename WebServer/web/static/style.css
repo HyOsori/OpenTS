@@ -7,9 +7,18 @@ body
 #content
 {
     width: 100%;
-    height: 500px;
-    margin-top: 22%;
+    height: 350px;
+    margin-top: 6%;
     margin-left: 20%;
+}
+
+h1
+{
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    font-size: 100px;
+    margin-top: 15%;
 }
 
 .search_background
