@@ -1,36 +1,72 @@
-.result_background
+.result_header
 {
-    margin-left: 5%;
-    margin-top: 5%;
-    width: 90%;
-    height: 90%;
+
+    height: 100px;
     background: #3C4547;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
-.result_bar
+.result_title
 {
-    margin-left: 10%;
-    margin-top: 5%;
-    width: 80%;
+
+    height: 100px;
     color: #ffffff;
+    /*background: #000000;*/
     font-size: 50px;
-    outline:none;
+    line-height: 100px;
 }
 
 .result_stock
 {
-    margin-left:5%;
-    height: 50px;
-    width: 150px;
-    background:#ffffff;
+    height: 100px;
+    width: 20%;
+    float: right;
+    background: #ffffff;;
     color: crimson;
     font-size: 20px;
+    line-height: 100px;
+    text-align: center;
 }
 .result_detail
 {
     margin-left: 5%;
-    height: 60%;
+    height: 1000px;
     width: 100%;
     background: #ffffff;
     font-size:  10px;
+}
+
+
+.result_content
+{
+
+}
+
+
+.container
+{
+    width:1000px;
+    margin: 0 auto;
+    height:100%;
+
+}
+
+.result_content .container
+{
+    min-height: 500px;
+    background: #f9f9f9;
+}
+
+
+
+body
+{
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
