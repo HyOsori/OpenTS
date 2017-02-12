@@ -7,6 +7,13 @@ class View_Search extends React.Component
     constructor(props)
     {
         super(props);
+
+        this.on_button_click = this.on_button_click.bind(this);
+    }
+
+    on_button_click()
+    {
+        window.location = "/web/result?keyword=" + $('#search_input').val();
     }
 
     render()
@@ -15,14 +22,11 @@ class View_Search extends React.Component
 
             <div className = "search_back">
 
-                <input className = "search_input">
+                <input className = "search_input" id="search_input">
                 </input>
-
-                <form action = "/web/result">
-                  <button type="submit" className = "search_btn">
+                <button type="submit" onClick={this.on_button_click} className = "search_btn">
                     <span> ☌ </span>
-                  </button>
-                </form>
+                </button>
 
             </div>
 
