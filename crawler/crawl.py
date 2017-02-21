@@ -33,9 +33,9 @@ ws = wb.ActiveSheet
 instXASession = win32com.client.DispatchWithEvents("XA_Session.XASession", XASessionEventHandler)
 #Create instance : Server Connection & Log-in Check
 
-id = ""
-password = ""
-cert_password = ""
+id = "epikjjh"
+password = "han4101!"
+cert_password = "swhan4101!"
 #Log-in information
 
 if instXASession.ConnectServer("hts.ebestsec.co.kr", 20001) == False:
