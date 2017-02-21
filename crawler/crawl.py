@@ -12,17 +12,17 @@ class XASessionEventHandler:
             print("Login Fail! Error code : " + code)
 #Log-in Check
 
-class XAQueryEventHandlerT1102:
+class XAQueryEventHandlerT1305:
     query_state = 0
 
     def OnReceiveData(self, code):
-        XAQueryEventHandlerT1102.query_state = 1
+        XAQueryEventHandlerT1305.query_state = 1
 #현재가 조회
 
 stocks = ["078020", "005930", "066570", "035420", "034220", "035720", "000720", "000660", "030200", "073240"]
 #주삭별 종목 코드
-info = ["hname", "price", "sign", "change", "diff", "volume", "recprice", "avg", "uplmtprice", "dnlmtprice", "jnilvolume", "volumediff", "open", "opentime", "high", "hightime", "low", "lowtime"]
-#각각 한글명, 현재가, 전일대비구분, 전일대비, 등락율, 누적거래량, 기준가, 가중평균, 상한가, 하한가, 전일거래량, 거래량차, 시가, 시가시간, 고가, 고가시간, 저가, 저가시간
+info = ["shcode","date", "open", "high", "low", "close", "sign", "change", "diff", "volume", "diff_vol", "chdegree", "sojinrate", "changerate", "fpvolume", "covolume", "value", "ppvolume", "o_sign", "o_change", "o_diff", "h_sign", "h_change", "h_diff", "l_sign", "l_change", "l_diff", "marketcap"]
+#각각 날짜, 시가, 고가, 저가, 종가, 전일대비구분, 전일대비, 등락율, 누적거래량, 거래증가율, 체결강도, 소진율, 회전율, 외인순매수, 기관순매수, 누적거래대금(단위:백만), 개인순매수, 시가대비구분, 시가대비, 시가기준등락율, 고가대비구분, 고가대비, 고가기준등락율, 저가대비구분, 저가대비, 저가기준등락율, 시가총액(단위:백만)
 
 #Excel file access
 excel = win32com.client.Dispatch("Excel.Application")
@@ -33,9 +33,9 @@ ws = wb.ActiveSheet
 instXASession = win32com.client.DispatchWithEvents("XA_Session.XASession", XASessionEventHandler)
 #Create instance : Server Connection & Log-in Check
 
-id = "아이디"
-password = "비밀번호"
-cert_password = "공인인증서번호"
+id = "epikjjh"
+password = "han4101!"
+cert_password = "swhan4101!"
 #Log-in information
 
 if instXASession.ConnectServer("hts.ebestsec.co.kr", 20001) == False:
@@ -50,22 +50,41 @@ while XASessionEventHandler.login_state == 0:
     pythoncom.PumpWaitingMessages()
 #Log-in process
 
-instXAQueryT1102 = win32com.client.DispatchWithEvents("XA_Dataset.XAQuery", XAQueryEventHandlerT1102)
-instXAQueryT1102.ResFileName = "C:\\eBEST\\xingAPI\\Res\\t1102.res"
-#Create instance : 현재가 조회
+instXAQueryT1305 = win32com.client.DispatchWithEvents("XA_Dataset.XAQuery", XAQueryEventHandlerT1305)
+instXAQueryT1305.ResFileName = "C:\\eBEST\\xingAPI\\Res\\t1305.res"
+#Create instance : 기간별 주가 조회
+
 
 for code in stocks:
-    instXAQueryT1102.SetFieldData("t1102InBlock", "shcode", 0, code)
-    instXAQueryT1102.Request(0)
-    while XAQueryEventHandlerT1102.query_state == 0:
+    instXAQueryT1305.SetFieldData("t1305InBlock", "shcode", 0, code)
+    instXAQueryT1305.SetFieldData("t1305InBlock", "dwmcode", 0, 1)
+    instXAQueryT1305.SetFieldData("t1305InBlock", "cnt", 0, 100)
+    #Default amount : 100
+
+    instXAQueryT1305.Request(0)
+    while XAQueryEventHandlerT1305.query_state == 0:
         pythoncom.PumpWaitingMessages()
 
-    for data in info:
-        ws.Cells(stocks.index(code)+2, info.index(data)+1).Value = instXAQueryT1102.GetFieldData("t1102OutBlock", data, 0)
+    count = instXAQueryT1305.GetBlockCount("t1305OutBlock1")
+    for i in range(count):
+        for data in info:
+            stock_data = Data()
+            ws.Cells(stocks.index(code)*count+i+2, info.index(data)+1).Value = instXAQueryT1305.GetFieldData("t1305OutBlock1", data, i)
 
-    XAQueryEventHandlerT1102.query_state = 0
+    XAQueryEventHandlerT1305.query_state = 0
     #Reset
 
-wb.SaveAs("C:\\Users\\user\\Documents\\OpenTS\\crawler\\Data.xlsx")
+'''
+data = Data()
+data.date = oeifj
+data. oej = wefoiwejf
+data.save()
+
+'''
+wb.Save()
+
+#wb.SaveAs("C:\\Users\\user\\Documents\\OpenTS\\crawler\\Data.xlsx")
+#Save as another name
+
 #Write in Excel
 excel.Quit()

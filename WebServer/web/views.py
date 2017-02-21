@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -9,3 +10,20 @@ def search(request):
 
 def result(request):
     return render_to_response('result.html')
+
+def getshcode(request):
+    keyword = request.GET['keyword']
+
+    if keyword == 'SAMSUNG':
+        return JsonResponse({
+            'status': 'OK',
+            'shcode': 1000
+        })
+    else:
+        return JsonResponse({
+            'status': 'Failure',
+            'shcode': -1
+        })
+
+def crawl(request):
+    return JsonResponse({})
