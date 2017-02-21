@@ -15,8 +15,6 @@ class View_Search extends React.Component
     {
         // window.location = "/web/getshcode?keyword=" + $('#search_input').val();
 
-        console.log('11111');
-
         $.get( "http://localhost:8000/web/getshcode?keyword=" + $('#search_input').val(),
             function( response )
             {
