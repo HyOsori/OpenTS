@@ -15,7 +15,10 @@ def getshcode(request):
     keyword = request.GET['keyword']
 
     if keyword == 'SAMSUNG':
-        return render_to_response('result.html')
+        return JsonResponse({
+            'status': 'OK',
+            'shcode': 100
+        })
     else:
         return JsonResponse({
             'status': 'Failure',

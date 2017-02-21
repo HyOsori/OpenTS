@@ -13,8 +13,23 @@ class View_Search extends React.Component
 
     on_button_click()
     {
-        window.location = "/web/getshcode?keyword=" + $('#search_input').val();
-        //window.location = "/web/result?keyword=" + $('#search_input').val();
+        // window.location = "/web/getshcode?keyword=" + $('#search_input').val();
+
+        console.log('11111');
+
+        $.get( "http://localhost:8000/web/getshcode?keyword=" + $('#search_input').val(),
+            function( response )
+            {
+                var shcode = response['shcode'];
+                if(shcode == -1){
+                    alert('존재하지 않는 종목입니다');
+                }
+                else{
+                    window.location = "/web/result?keyword=" + shcode;
+                }
+
+            });
+
     }
 
     render()
