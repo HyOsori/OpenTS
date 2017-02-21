@@ -13,7 +13,8 @@ class View_Search extends React.Component
 
     on_button_click()
     {
-        window.location = "/web/result?keyword=" + $('#search_input').val();
+        window.location = "/web/getshcode?keyword=" + $('#search_input').val();
+        //window.location = "/web/result?keyword=" + $('#search_input').val();
     }
 
     render()
