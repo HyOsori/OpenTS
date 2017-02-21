@@ -145,6 +145,7 @@ ReactDOM.render(<View_Result_content/>, document.getElementById('content'));
 var chart_h = 40;
 var chart_w = 80;
 var stepX = 77 / 14;
+var i = 0;
 
 var chart_1_y = [
   15, 25, 40, 30, 45, 40, 35, 55, 37, 50, 60, 45,70, 78
