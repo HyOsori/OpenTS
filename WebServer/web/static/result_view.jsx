@@ -146,12 +146,6 @@ var chart_h = 40;
 var chart_w = 80;
 var stepX = 77 / 14;
 
-var chart_1_y = [
-  15, 25, 40, 30, 45, 40, 35, 55, 37, 50, 60, 45,70, 78
-];
-var chart_2_y = [
-  80, 65, 65, 40, 55, 34, 54, 50, 60, 64, 55, 27, 24, 30
-];
 
 function point(x, y) {
     x: 0;
@@ -161,8 +155,10 @@ function point(x, y) {
 function drawGrid(graph) {
     var graph = Snap(graph);
     var g = graph.g();
+    var i = 0 ;
     g.attr('id', 'grid');
-    for (i = 0; i <= stepX + 2; i++) {
+
+    for ( i = 0; i <= stepX + 2; i++) {
         var horizontalLine = graph.path(
             "M" + 0 + "," + stepX * i + " " +
             "L" + 77 + "," + stepX * i);
@@ -181,14 +177,14 @@ drawGrid('#chart-2');
 drawGrid('#chart-1');
 
 function drawLineGraph(graph, points, container, id) {
-
-
     var graph = Snap(graph);
 
 
+    var i = 0;
     /*END DRAW GRID*/
 
     /* PARSE POINTS */
+
     var myPoints = [];
     var shadowPoints = [];
 
@@ -204,8 +200,8 @@ function drawLineGraph(graph, points, container, id) {
             myPoints.push(p);
         }
     }
-
     var segments = [];
+
 
     function createSegments(p_array) {
         for (i = 0; i < p_array.length; i++) {
@@ -222,11 +218,11 @@ function drawLineGraph(graph, points, container, id) {
         var line = graph.path(line);
         line.attr('id', 'graph-' + id);
         var lineLength = line.getTotalLength();
-
         line.attr({
             'stroke-dasharray': lineLength,
                 'stroke-dashoffset': lineLength
         });
+
     }
 
     function calculatePercentage(points, graph) {
@@ -244,38 +240,38 @@ function drawLineGraph(graph, points, container, id) {
                 prefix = "";
             }
         }
-
         var percentagePrefix = "";
+
 
         function percentageChange() {
             percentageGain = initValue / endValue * 100;
 
             if(percentageGain > 100){
-              console.log('over100');
-              percentageGain = Math.round(percentageGain * 100*10) / 100;
+                console.log('over100');
+                percentageGain = Math.round(percentageGain * 100*10) / 100;
             }else if(percentageGain < 100){
-              console.log('under100');
-              percentageGain = Math.round(percentageGain * 10) / 10;
+                console.log('under100');
+                percentageGain = Math.round(percentageGain * 10) / 10;
             }
             if (initValue > endValue) {
-
                 percentageGain = endValue/initValue*100-100;
-                percentageGain = percentageGain.toFixed(2);
 
+                percentageGain = percentageGain.toFixed(2);
                 percentagePrefix = "";
+
                 $(graph).find('.percentage-value').addClass('negative');
             } else {
                 percentagePrefix = "+";
             }
-          if(endValue > initValue){
-              percentageGain = endValue/initValue*100;
-              percentageGain = Math.round(percentageGain);
-          }
+            if(endValue > initValue){
+                percentageGain = endValue/initValue*100;
+                percentageGain = Math.round(percentageGain);
+            }
         };
         percentageChange();
         findPrefix();
-
         var percentage = $(graph).find('.percentage-value');
+
         var totalGain = $(graph).find('.total-gain');
         var hVal = $(graph).find('.h-value');
 
@@ -300,8 +296,8 @@ function drawLineGraph(graph, points, container, id) {
             }
         }
         count(graph, sum);
-
         percentage.text(percentagePrefix + percentageGain + "%");
+
         totalGain.text("0%");
         setTimeout(function () {
             percentage.addClass('visible');
@@ -324,8 +320,8 @@ function drawLineGraph(graph, points, container, id) {
         polySeg.push([78, 38.4], [1, 38.4]);
         var polyLine = polySeg.join(' ').toString();
         var replacedString = polyLine.replace(/L/g, '').replace(/M/g, "");
-
         var poly = graph.polygon(replacedString);
+
         var clip = graph.rect(-80, 0, 80, 40);
         poly.attr({
             'id': 'poly-' + id,
@@ -336,17 +332,16 @@ function drawLineGraph(graph, points, container, id) {
             transform: 't80,0'
         }, 1300, mina.linear);
     }
-
       parseData(points);
 
       createSegments(myPoints);
-      calculatePercentage(points, container);
-      joinLine(segments,id);
 
+    calculatePercentage(points, container);
+    joinLine(segments,id);
       drawPolygon(segments, id);
 
-
     /*$('#poly-'+id).attr('class','show');*/
+
 
     /* function drawPolygon(segments,id){
       var polySeg = segments;
@@ -357,45 +352,55 @@ function drawLineGraph(graph, points, container, id) {
       poly.attr('id','poly-'+id)
     }
     drawPolygon(segments,id);*/
+
 }
 function drawCircle(container,id,progress,parent){
-  var paper = Snap(container);
-  var prog = paper.path("M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50");
-  var lineL = prog.getTotalLength();
-  var oneUnit = lineL/100;
-  var toOffset = lineL - oneUnit * progress;
-  var myID = 'circle-graph-'+id;
-  prog.attr({
+    var paper = Snap(container);
+    var prog = paper.path("M5,50 A45,45,0 1 1 95,50 A45,45,0 1 1 5,50");
+    var lineL = prog.getTotalLength();
+    var oneUnit = lineL/100;
+    var toOffset = lineL - oneUnit * progress;
+    var myID = 'circle-graph-'+id;
+    prog.attr({
     'stroke-dashoffset':lineL,
     'stroke-dasharray':lineL,
     'id':myID
   });
-
   var animTime = 1300/*progress / 100*/
 
   prog.animate({
     'stroke-dashoffset':toOffset
   },animTime,mina.easein);
 
-  function countCircle(animtime,parent,progress){
-    var textContainer = $(parent).find('.circle-percentage');
-    var i = 0;
-    var time = 1300;
-    var intervalTime = Math.abs(time / progress);
-    var timerID = setInterval(function () {
+
+    function countCircle(animtime,parent,progress){
+        var textContainer = $(parent).find('.circle-percentage');
+        var i = 0;
+        var time = 1300;
+        var intervalTime = Math.abs(time / progress);
+        var timerID = setInterval(function () {
       i++;
       textContainer.text(i+"%");
       if (i === progress) clearInterval(timerID);
     }, intervalTime);
-  }
-  countCircle(animTime,parent,progress);
+    }
+    countCircle(animTime,parent,progress);
 }
+
+// 첫번째 Line Graph data
+var chart_1_y = [
+    15, 25, 40, 30, 45, 40, 35, 55, 37, 50, 60, 45,70, 78
+];
+// 두번쨰 Line Graph data
+var chart_2_y = [
+    80, 65, 65, 40, 55, 34, 54, 50, 60, 64, 55, 27, 24, 30
+];
 
 
 
 $(window).on('load',function(){
-    drawCircle('#chart-3',1,77,'#circle-1');
-    drawCircle('#chart-4',2,53,'#circle-2');
     drawLineGraph('#chart-1', chart_1_y, '#graph-1-container', 1);
     drawLineGraph('#chart-2', chart_2_y, '#graph-2-container', 2);
+    drawCircle('#chart-3',1,77,'#circle-1');
+    drawCircle('#chart-4',2,53,'#circle-2');
 });
