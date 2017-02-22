@@ -4,7 +4,7 @@ from django.db import models
 class Data(models.Model):
     shcode = models.CharField(max_length=50, default='code')
     #종목코드
-    date = models.DateField(blank=True, null=True)
+    date = models.CharField(max_length=50, default='date')
     #날짜
     open = models.IntegerField()
     #시가
@@ -50,11 +50,11 @@ class Data(models.Model):
     #고가대비
     h_diff = models.FloatField()
     #고가기준등락율
-    I_sign = models.IntegerField()
+    l_sign = models.IntegerField()
     #저가대비구분
-    I_change = models.IntegerField()
+    l_change = models.IntegerField()
     #저가대비
-    I_diff = models.FloatField()
+    l_diff = models.FloatField()
     #저가기준등락율
     marketcap = models.IntegerField()
     #시가총액(백만)
