@@ -15,8 +15,8 @@ class View_Result_header extends React.Component {
         return (
             <div className="result_header">
                 <div className="container">
-                    <h1 className="result_stock">▲1800000</h1>
-                    <h2 className="result_title">SAMSUNG</h2>
+                    <h1 className="result_title">SAMSUNG</h1>
+                    <h2 className="result_stock">▲1800000</h2>
                 </div>
             </div>
 
