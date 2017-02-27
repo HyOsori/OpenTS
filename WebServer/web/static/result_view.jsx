@@ -172,12 +172,15 @@ function drawGrid(graph) {
         horizontalLine.attr('class', 'vertical');
         g.add(horizontalLine);
     };
+
+    console.log('drawGrid')
 }
-drawGrid('#chart-2');
-drawGrid('#chart-1');
+
 
 function drawLineGraph(graph, points, container, id) {
     var graph = Snap(graph);
+
+    console.log('drawLineGraph');
 
 
     var i = 0;
@@ -211,6 +214,7 @@ function drawLineGraph(graph, points, container, id) {
             }
             segments.push(seg);
         }
+        console.log('createSegments');
     }
 
     function joinLine(segments_array, id) {
@@ -223,6 +227,7 @@ function drawLineGraph(graph, points, container, id) {
                 'stroke-dashoffset': lineLength
         });
 
+          console.log('joinLine');
     }
 
     function calculatePercentage(points, graph) {
@@ -267,6 +272,7 @@ function drawLineGraph(graph, points, container, id) {
                 percentageGain = endValue/initValue*100;
                 percentageGain = Math.round(percentageGain);
             }
+              console.log('percentageChange');
         };
         percentageChange();
         findPrefix();
@@ -304,6 +310,7 @@ function drawLineGraph(graph, points, container, id) {
             hVal.addClass('visible');
         }, 1300);
 
+          console.log('calculatePercentage');
     }
 
 
@@ -397,10 +404,16 @@ var chart_2_y = [
 ];
 
 
+drawGrid('#chart-2');
+drawGrid('#chart-1');
+drawLineGraph('#chart-1', chart_1_y, '#graph-1-container', 1);
+drawLineGraph('#chart-2', chart_2_y, '#graph-2-container', 2);
+drawCircle('#chart-3',1,77,'#circle-1');
+drawCircle('#chart-4',2,53,'#circle-2');
 
-$(window).on('load',function(){
-    drawLineGraph('#chart-1', chart_1_y, '#graph-1-container', 1);
-    drawLineGraph('#chart-2', chart_2_y, '#graph-2-container', 2);
-    drawCircle('#chart-3',1,77,'#circle-1');
-    drawCircle('#chart-4',2,53,'#circle-2');
-});
+// $(window).on('load',function(){
+//     drawLineGraph('#chart-1', chart_1_y, '#graph-1-container', 1);
+//     drawLineGraph('#chart-2', chart_2_y, '#graph-2-container', 2);
+//     drawCircle('#chart-3',1,77,'#circle-1');
+//     drawCircle('#chart-4',2,53,'#circle-2');
+// });
