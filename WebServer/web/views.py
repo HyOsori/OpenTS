@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+'''
 from web.singleton import code_dic
 from web.models import Data
 import win32com.client
 import pythoncom
+'''
 # Create your views here.
 from django.shortcuts import render_to_response
 
@@ -14,6 +16,12 @@ def result(request):
     return render_to_response('result.html')
 
 def getshcode(request):
+    return JsonResponse({
+        'status': 'Success',
+        'shcode': '12345'
+    })
+
+    '''
     keyword = request.GET['keyword']
 
     if keyword in code_dic == True:
@@ -28,7 +36,11 @@ def getshcode(request):
             'shcode': -1
         })
     #If hname is not in key
+    '''
 def crawl(request):
+    return JsonResponse({})
+
+    '''
     shcode = request.GET['shcode']
 
     class XAQueryEventHandlerT1305:
@@ -85,3 +97,4 @@ def crawl(request):
     XAQueryEventHandlerT1305.query_state = 0
     # Reset
     return JsonResponse({})
+    '''
