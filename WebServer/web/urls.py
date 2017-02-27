@@ -1,7 +1,9 @@
 from django.conf.urls import url
+from . import views
+
+'''
 import win32com.client
 import pythoncom
-from . import views
 
 class XASessionEventHandler:
     login_state = 0
@@ -33,6 +35,8 @@ instXASession.Login(id, password, cert_password, 1, False)
 while XASessionEventHandler.login_state == 0:
     pythoncom.PumpWaitingMessages()
 # Log-in process
+'''
+
 urlpatterns = [
     url(r'^search/', views.search, name='search'),
     url(r'^result/', views.result, name = 'result'),
