@@ -1,6 +1,5 @@
 '''
 import win32com.client
-import pythoncom
 
 excel = win32com.client.Dispatch("Excel.Application")
 # Excel file access
