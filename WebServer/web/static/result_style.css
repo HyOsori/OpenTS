@@ -1,9 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-
-body, html {
-  font-family: Lato;
-}
-
 body {
   background-color: #1d212b;
   font-family: 'Spoqa Han Sans', 'serif';
@@ -35,6 +29,23 @@ h3{
   font-weight: 200;
   font-family: 'Spoqa Han Sans', 'serif';
   color: #ffffff;
+}
+
+.learning_btn{
+    position: absolute;
+    right: 5%;
+    top: 8%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline:none;
+    background-color: transparent;
+}
+.learning_btn span{
+    color: #ffffff;
+}
+.learning_btn span:active{
+    color: #d1d1d1;
 }
 
 #grid {

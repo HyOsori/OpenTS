@@ -12,6 +12,9 @@ class View_Result_header extends React.Component {
             <div className="result_header">
                 <div className="container">
                     <h1 className="result_title">SAMSUNG</h1>
+                    <button className="learning_btn">
+                        <span className="fa fa-refresh fa-4x"></span>
+                    </button>
                     <h2 className="result_stock">▲1800000</h2>
                 </div>
             </div>
