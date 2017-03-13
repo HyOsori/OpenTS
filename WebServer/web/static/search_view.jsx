@@ -9,6 +9,7 @@ class View_Search extends React.Component
         super(props);
 
         this.on_button_click = this.on_button_click.bind(this);
+        this.checkEnter = this.checkEnter.bind(this);
     }
 
     on_button_click()
@@ -30,29 +31,27 @@ class View_Search extends React.Component
 
     }
 
+    checkEnter(e){
+
+        if(e.keyCode == 13){
+            this.on_button_click();
+        }
+
+    }
+
     render()
     {
         return (
 
             <div className = "search_back">
 
-                <input className = "search_input" id="search_input">
+                <input className = "search_input" onKeyDown={this.checkEnter} id="search_input">
                 </input>
                 <button type="submit" onClick={this.on_button_click} className = "search_btn">
                     <span> ☌ </span>
                 </button>
 
             </div>
-
-            /*<div className="search_background">
-                <input className="search_bar">
-
-                </input>
-
-                <div className="search_btn">
-
-                </div>
-            </div>*/
         )
     }
 }
