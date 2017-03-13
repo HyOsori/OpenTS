@@ -1,17 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-@font-face {
-  font-family: Lato;
-  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/176026/ProximaNova-Regular.otf);
-  font-weight: 300;
-}
+
 body, html {
   font-family: Lato;
 }
 
+body {
+  background-color: #1d212b;
+  font-family: 'Spoqa Han Sans', 'serif';
+  text-align: center;
+}
+
 h1 {
-  font-size: 28px;
+  font-weight: 100;
+  font-size: 60px;
   line-height: 40px;
-  margin-top: 20px;
+  margin-top: 60px;
+  color: #ffffff;
 }
 h1 a {
   text-decoration: none;
@@ -19,6 +23,18 @@ h1 a {
 }
 h1 p {
   font-size: 22px;
+}
+
+h2 {
+  font-weight: 400;
+  font-family: 'Spoqa Han Sans', 'serif';
+  color: #ef6670;
+}
+
+h3{
+  font-weight: 200;
+  font-family: 'Spoqa Han Sans', 'serif';
+  color: #ffffff;
 }
 
 #grid {
@@ -31,7 +47,7 @@ h1 p {
 /* GRAPH - 1 */
 #graph-1 {
   stroke: url(#gradient-1);
-  stroke-width: 1.5;
+  stroke-width: 0.5;
   fill: transparent;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -42,7 +58,7 @@ h1 p {
 
 #graph-2 {
   stroke: url(#gradient-2);
-  stroke-width: 1.5;
+  stroke-width: 0.5;
   fill: transparent;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -79,7 +95,7 @@ h1 p {
   fill: transparent;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: #24303a;
+  stroke: #1d212b;
 }
 
 #circle-graph-1 {
@@ -103,12 +119,6 @@ h1 p {
   fill: transparent;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-body {
-  background-color: #24303a;
-  color: white;
-  text-align: center;
 }
 
 .charts-container {
@@ -314,3 +324,11 @@ body {
   color: #ef6670;
   font-size: 14px;
 }
+
+@keyframes textColor {
+  0% {
+    color: #7e0fff; }
+  50% {
+    color: #0fffc1; }
+  100% {
+    color: #7e0fff; } }

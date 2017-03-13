@@ -2,10 +2,6 @@
  * Created by hch on 2017. 1. 22..
  */
 
-
-
-
-
 class View_Result_header extends React.Component {
     constructor(props) {
         super(props);
@@ -35,7 +31,7 @@ class View_Result_content extends React.Component {
             <div>
             <div className="charts-container cf">
               <div className="chart" id="graph-1-container">
-                <h2 className="title">Hours worked</h2>
+                <h3 className="title">Quote</h3>
                 <div className="chart-svg">
                   <svg className="chart-line" id="chart-1" viewBox="0 0 80 40">
                     <defs>
@@ -49,7 +45,7 @@ class View_Result_content extends React.Component {
                     </linearGradient>
 
                     <linearGradient id="gradient-2">
-                        <stop offset="0" stop-color="#954ce9" />
+                        <stop offset="0" stop-color="#954ce9"/>
                         <stop offset="0.3" stop-color="#954ce9" />
                         <stop offset="0.6" stop-color="#24c1ed" />
                         <stop offset="1" stop-color="#24c1ed" />
@@ -81,7 +77,7 @@ class View_Result_content extends React.Component {
                 <div className="triangle green"></div>
               </div>
               <div className="chart" id="graph-2-container">
-                <h2 className="title">Hours worked</h2>
+                <h3 className="title">Charts</h3>
                 <div className="chart-svg">
                   <svg className="chart-line" id="chart-2" viewBox="0 0 80 40">
                   </svg>
@@ -95,7 +91,7 @@ class View_Result_content extends React.Component {
                 <div className="triangle red"></div>
               </div>
               <div className="chart circle" id="circle-1">
-                <h2 className="title">IBApps Website</h2>
+                <h3 className="title">Stock Price Forecast</h3>
                 <div className="chart-svg align-center">
                   <h2 className="circle-percentage"></h2>
                   <svg className="chart-circle" id="chart-3" width="50%" viewBox="0 0 100 100">
@@ -105,7 +101,7 @@ class View_Result_content extends React.Component {
                 <div className="triangle green"></div>
               </div>
               <div className="chart circle" id="circle-2">
-                <h2 className="title">IBApps Website</h2>
+                <h3 className="title">Analyst Recommendations</h3>
                 <div className="chart-svg align-center">
                   <h2 className="circle-percentage"></h2>
                   <svg className="chart-circle" id="chart-4" width="50%" viewBox="0 0 100 100">
