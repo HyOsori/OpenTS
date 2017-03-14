@@ -111,7 +111,7 @@ h3{
 
 #circle-graph-1 {
   stroke: url(#gradient-1);
-  stroke-width: 5;
+  stroke-width: 3;
   fill: transparent;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -126,7 +126,7 @@ h3{
 
 #circle-graph-2 {
   stroke: url(#gradient-2);
-  stroke-width: 5;
+  stroke-width: 3;
   fill: transparent;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -188,9 +188,10 @@ h3{
 .circle-percentage {
   position: absolute;
   color: white;
+  font-weight: 100;
   font-size: 48px;
   left: 50%;
-  top: 50%;
+  top: 30%;
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);

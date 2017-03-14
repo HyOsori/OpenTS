@@ -43,29 +43,29 @@ class View_Result_content extends React.Component {
                       </clipPath>
 
                     <linearGradient id="gradient-1">
-                        <stop offset="0" stop-color="#00d5bd" />
-                        <stop offset="100" stop-color="#24c1ed" />
+                        <stop offset="0" stopColor="#00d5bd"/>
+                        <stop offset="100" stopColor="#24c1ed"/>
                     </linearGradient>
 
-                    <linearGradient id="gradient-2">
-                        <stop offset="0" stop-color="#954ce9"/>
-                        <stop offset="0.3" stop-color="#954ce9" />
-                        <stop offset="0.6" stop-color="#24c1ed" />
-                        <stop offset="1" stop-color="#24c1ed" />
+                    <linearGradient id="gradient-2">s
+                        <stop offset="0" stopColor="#954ce9"/>
+                        <stop offset="0.3" stopColor="#954ce9" />
+                        <stop offset="0.6" stopColor="#24c1ed" />
+                        <stop offset="1" stopColor="#24c1ed" />
                     </linearGradient>
 
 
                       <linearGradient id="gradient-3" x1="0%" y1="0%" x2="0%" y2="100%">>
-                        <stop offset="0" stop-color="rgba(0, 213, 189, 1)" stop-opacity="0.07"/>
-                        <stop offset="0.5" stop-color="rgba(0, 213, 189, 1)" stop-opacity="0.13"/>
-                        <stop offset="1" stop-color="rgba(0, 213, 189, 1)" stop-opacity="0"/>
+                        <stop offset="0" stopColor="rgba(0, 213, 189, 1)" stopOpacity="0.07"/>
+                        <stop offset="0.5" stopColor="rgba(0, 213, 189, 1)" stopOpacity="0.13"/>
+                        <stop offset="1" stopColor="rgba(0, 213, 189, 1)" stopOpacity="0"/>
                     </linearGradient>
 
 
                     <linearGradient id="gradient-4" x1="0%" y1="0%" x2="0%" y2="100%">>
-                        <stop offset="0" stop-color="rgba(149, 76, 233, 1)" stop-opacity="0.07"/>
-                        <stop offset="0.5" stop-color="rgba(149, 76, 233, 1)" stop-opacity="0.13"/>
-                        <stop offset="1" stop-color="rgba(149, 76, 233, 1)" stop-opacity="0"/>
+                        <stop offset="0" stopColor="rgba(149, 76, 233, 1)" stopOpacity="0.07"/>
+                        <stop offset="0.5" stopColor="rgba(149, 76, 233, 1)" stopOpacity="0.13"/>
+                        <stop offset="1" stopColor="rgba(149, 76, 233, 1)" stopOpacity="0"/>
                     </linearGradient>
 
                 </defs>
@@ -395,7 +395,7 @@ function drawCircle(container,id,progress,parent){
 
 // 첫번째 Line Graph data
 var chart_1_y = [
-    15, 25, 40, 30, 45, 40, 35, 55, 37, 50, 60, 45,70, 78
+    15, 25, 40, 30, 45, 40, 35, 55, 37, 50, 60, 45, 70, 78
 ];
 // 두번쨰 Line Graph data
 var chart_2_y = [
