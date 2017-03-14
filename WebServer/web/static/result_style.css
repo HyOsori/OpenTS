@@ -31,6 +31,23 @@ h3{
   color: #ffffff;
 }
 
+.home_btn{
+  position: absolute;
+  left: 5%;
+  top: 8%;
+  width: 50px;
+  height: 50px;
+    border: none;
+    outline:none;
+    background-color: transparent;
+}
+.home_btn span{
+    color: #ffffff;
+}
+.home_btn span:active{
+    color: #d1d1d1;
+}
+
 .learning_btn{
     position: absolute;
     right: 5%;

@@ -5,6 +5,12 @@
 class View_Result_header extends React.Component {
     constructor(props) {
         super(props);
+
+        this.on_button_click = this.on_button_click.bind(this);
+    }
+
+    on_button_click() {
+        window.location = "/web/search";
     }
 
     render() {
@@ -14,6 +20,9 @@ class View_Result_header extends React.Component {
                     <h1 className="result_title">SAMSUNG</h1>
                     <button className="learning_btn">
                         <span className="fa fa-refresh fa-4x"></span>
+                    </button>
+                    <button className="home_btn" onClick={this.on_button_click}>
+                        <span className="fa fa-home fa-4x"></span>
                     </button>
                     <h2 className="result_stock">▲1800000</h2>
                 </div>
